@@ -1,0 +1,10 @@
+--- libcsf-2.0-041111/src/csf/Makefile.am.orig	2004-11-11 09:57:29.000000000 +0100
++++ libcsf-2.0-041111/src/csf/Makefile.am	2005-09-03 09:58:05.422344792 +0200
+@@ -1,4 +1,5 @@
+-lib_LIBRARIES = libcsf.a
+-libcsf_a_SOURCES = csf.h csfattr.h csfimpl.h endian.c swapio.c vs2.c vsdef.c rextend.c vsvers.c legend.c strpad.c strconst.c vsis.c ruseas.c rmalloc.c create2.c _getcell.c _getrow.c _gsomece.c _putcell.c _rputrow.c attravai.c attrsize.c csfglob.c csfsup.c delattr.c filename.c gattrblk.c gattridx.c gcellrep.c cellsize.c gdattype.c getattr.c getx0.c gety0.c ggisfid.c gmaxval.c gminval.c gnrcols.c gnrrows.c gproj.c gputproj.c gvalscal.c gvartype.c gversion.c ismv.c kernlcsf.c mclose.c mopen.c mperror.c pgisfid.c pmaxval.c pminval.c putallmv.c putattr.c putsomec.c putx0.c puty0.c pvalscal.c rattrblk.c rcomp.c rcoords.c rdup2.c reseterr.c rrowcol.c setmv.c setvtmv.c moreattr.c wattrblk.c setangle.c angle.c dumconv.c trackmm.c
++lib_LTLIBRARIES = libcsf.la
++libcsf_la_LIBADD = -lm
++libcsf_la_SOURCES = csf.h csfattr.h csfimpl.h endian.c swapio.c vs2.c vsdef.c rextend.c vsvers.c legend.c strpad.c strconst.c vsis.c ruseas.c rmalloc.c create2.c _getcell.c _getrow.c _gsomece.c _putcell.c _rputrow.c attravai.c attrsize.c csfglob.c csfsup.c delattr.c filename.c gattrblk.c gattridx.c gcellrep.c cellsize.c gdattype.c getattr.c getx0.c gety0.c ggisfid.c gmaxval.c gminval.c gnrcols.c gnrrows.c gproj.c gputproj.c gvalscal.c gvartype.c gversion.c ismv.c kernlcsf.c mclose.c mopen.c mperror.c pgisfid.c pmaxval.c pminval.c putallmv.c putattr.c putsomec.c putx0.c puty0.c pvalscal.c rattrblk.c rcomp.c rcoords.c rdup2.c reseterr.c rrowcol.c setmv.c setvtmv.c moreattr.c wattrblk.c setangle.c angle.c dumconv.c trackmm.c
+ AM_CPPFLAGS = -I@srcdir@/../../include
+ include_HEADERS = csf.h csfattr.h 
