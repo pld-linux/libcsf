@@ -1,0 +1,73 @@
+diff -urN libcsf-2.0-041111.org/include/csftypes.h libcsf-2.0-041111/include/csftypes.h
+--- libcsf-2.0-041111.org/include/csftypes.h	2004-07-12 10:26:36.000000000 +0200
++++ libcsf-2.0-041111/include/csftypes.h	2005-11-27 17:38:38.129747500 +0100
+@@ -1,6 +1,8 @@
+ #ifndef INCLUDED_CSFTYPES
+ # define INCLUDED_CSFTYPES
+ 
++#include <features.h>
++
+ #ifdef __cplusplus
+  extern "C" {
+  #define CSF_IN_GLOBAL_NS ::
+@@ -82,56 +84,12 @@
+  * DEFINE WITH -D
+  * first probe a few:
+  */
+-
+-#ifdef _AIX
+-/* IBM AIX defines this on RS/6000 */
+-# ifndef CPU_BIG_ENDIAN
+-#  define CPU_BIG_ENDIAN
+-# endif
+-#endif
+-
+-#ifdef sparc
+-/* both cc and gcc defines this in SunOS */
+-# define CPU_BIG_ENDIAN
+-#endif
+-
+-#ifdef mips
+-/* works on the SGI machines */
+-# define CPU_BIG_ENDIAN
+-#endif
+-
+-
+-#ifdef __alpha
+-/* DEC alpha defines this
+- * tested on OSF1 planet V4.0 1229 alpha
+- *   in combo with egcs/gcc 2.95.2
+- */
+-# ifndef CPU_LITTLE_ENDIAN
++#if __BYTE_ORDER == __LITTLE_ENDIAN
+ #  define CPU_LITTLE_ENDIAN
+-# endif
+-#endif
+-
+-#ifdef __i386__
+-/* linux/gcc defines this on intel 80x86 platform */
+-# ifndef CPU_LITTLE_ENDIAN
+-#  define CPU_LITTLE_ENDIAN
+-# endif
+-#endif
+-
+-#ifdef _M_IX86
+-/* Borland C defines this */
+-/* Win32/MSC defines this on intel 80x86 platform */
+-# ifndef CPU_LITTLE_ENDIAN
+-#  define CPU_LITTLE_ENDIAN
+-# endif
+-#endif
+-
+-
+-#ifdef __hppa
+-/* cc and gcc defines this on HP PA risc platform */
+-# ifndef CPU_BIG_ENDIAN
++#elif __BYTE_ORDER == __BIG_ENDIAN
+ #  define CPU_BIG_ENDIAN
+-# endif
++#else
++#  error BYTE ORDER NOT SPECIFIED (CPU_LITTLE_ENDIAN or CPU_BIG_ENDIAN)
+ #endif
+ 
+ /* POSIX or XOPEN compliance
