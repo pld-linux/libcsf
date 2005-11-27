@@ -3,7 +3,7 @@ Summary(pl):	API C do odczytu i zapisu map PCRaster
 Name:		libcsf
 Version:	2.0
 %define	snap	041111
-Release:	0.%{snap}.1
+Release:	0.%{snap}.2
 License:	BSD
 Group:		Libraries
 Source0:	http://pcraster.geo.uu.nl/download/dist/%{name}-%{version}-%{snap}.tar.gz
@@ -11,6 +11,7 @@ Source0:	http://pcraster.geo.uu.nl/download/dist/%{name}-%{version}-%{snap}.tar.
 Source1:	http://pcraster.geo.uu.nl/download/doc/csfhtml.tar.gz
 # Source1-md5:	059ac4a78e04df515e9f9cb411d1eb33
 Patch0:		%{name}-shared.patch
+Patch1:		%{name}-endian.patch
 URL:		http://pcraster.geog.uu.nl/csfapi.html
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -50,6 +51,7 @@ Statyczna biblioteka CSF.
 %prep
 %setup -q -n %{name}-%{version}-%{snap} -a1
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
