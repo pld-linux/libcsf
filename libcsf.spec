@@ -1,5 +1,5 @@
 Summary:	C API for reading and writing PCRaster maps
-Summary(pl.UTF-8):   API C do odczytu i zapisu map PCRaster
+Summary(pl.UTF-8):	API C do odczytu i zapisu map PCRaster
 Name:		libcsf
 Version:	2.0
 %define	snap	041111
@@ -26,7 +26,7 @@ API C do odczytu i zapisu map PCRaster.
 
 %package devel
 Summary:	Header files for CSF library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki CSF
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki CSF
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -38,7 +38,7 @@ Pliki nagłówkowe biblioteki CSF.
 
 %package static
 Summary:	Static CSF library
-Summary(pl.UTF-8):   Statyczna biblioteka CSF
+Summary(pl.UTF-8):	Statyczna biblioteka CSF
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
