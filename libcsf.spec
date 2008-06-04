@@ -6,6 +6,7 @@ Version:	2.0
 Release:	0.%{snap}.2
 License:	BSD
 Group:		Libraries
+#Source0Download: http://pcraster.geog.uu.nl/csfapi.html
 Source0:	http://pcraster.geo.uu.nl/download/dist/%{name}-%{version}-%{snap}.tar.gz
 # Source0-md5:	20f60a66ef1df2500fc44c5e8371e26f
 Source1:	http://pcraster.geo.uu.nl/download/doc/csfhtml.tar.gz
