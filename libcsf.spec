@@ -1,9 +1,10 @@
+%define		snap	041111
+%define		rel		3
 Summary:	C API for reading and writing PCRaster maps
 Summary(pl.UTF-8):	API C do odczytu i zapisu map PCRaster
 Name:		libcsf
 Version:	2.0
-%define	snap	041111
-Release:	0.%{snap}.2
+Release:	0.%{snap}.%{rel}
 License:	BSD
 Group:		Libraries
 #Source0Download: http://pcraster.geog.uu.nl/csfapi.html
@@ -78,6 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING README
 %attr(755,root,root) %{_libdir}/libcsf.so.*.*.*
+%ghost %{_libdir}/libcsf.so.0
 
 %files devel
 %defattr(644,root,root,755)
