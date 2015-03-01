@@ -1,5 +1,5 @@
 %define		snap	041111
-%define		rel		4
+%define		rel		5
 Summary:	C API for reading and writing PCRaster maps
 Summary(pl.UTF-8):	API C do odczytu i zapisu map PCRaster
 Name:		libcsf
