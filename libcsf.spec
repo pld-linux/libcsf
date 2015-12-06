@@ -1,5 +1,5 @@
 %define		snap	041111
-%define		rel		5
+%define		rel	6
 Summary:	C API for reading and writing PCRaster maps
 Summary(pl.UTF-8):	API C do odczytu i zapisu map PCRaster
 Name:		libcsf
@@ -68,6 +68,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install src/csf/csfimpl.h $RPM_BUILD_ROOT%{_includedir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
